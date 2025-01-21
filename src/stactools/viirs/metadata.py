@@ -74,7 +74,7 @@ class Metadata:
         id = utils.id_from_h5(h5_href)
         product = utils.product_from_h5(h5_href)
         version = utils.version_from_h5(h5_href)
-        if version != "001":
+        if version not in ["001", "002"]:
             raise ValueError(f"Unsupported VIIRS version: {version}")
 
         acquisition_datetime: Optional[datetime] = None
