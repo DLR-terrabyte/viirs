@@ -6,6 +6,7 @@ from pystac import MediaType
 class VIIRSProducts(str, Enum):
     VNP09A1 = "VNP09A1"
     VNP09H1 = "VNP09H1"
+    VNP09GA = "VNP09GA"
     VNP10A1 = "VNP10A1"
     VNP13A1 = "VNP13A1"
     VNP14A1 = "VNP14A1"
@@ -22,6 +23,7 @@ FOOTPRINT_PRECISION = 7
 FOOTPRINT_DATA_ASSETS = {
     VIIRSProducts.VNP09A1.name: ["SurfReflect_M1"],
     VIIRSProducts.VNP09H1.name: ["SurfReflect_I1"],
+    VIIRSProducts.VNP09GA.name: ["SurfReflect_I1"], # needs to be confirmed (JM)
     VIIRSProducts.VNP10A1.name: ["NDSI"],
     VIIRSProducts.VNP13A1.name: ["500_m_16_days_NDVI"],
     VIIRSProducts.VNP14A1.name: ["FireMask"],
