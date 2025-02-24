@@ -72,9 +72,12 @@ def create_item(
             "viirs:tile-id": metadata.tile_id,
         },
     )
-
     item.common_metadata.created = datetime.now(tz=timezone.utc)
-    item.common_metadata.platform = constants.PLATFORM
+    if "VJ" in item.id:
+        item.common_metadata.platform = "jpss-1"
+    else:
+        item.common_metadata.platform = constants.PLATFORM
+
     item.common_metadata.instruments = constants.INSTRUMENT
     if fragments.gsd():
         item.common_metadata.gsd = fragments.gsd()
